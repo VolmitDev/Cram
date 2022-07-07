@@ -51,6 +51,7 @@ public class PakWriter {
         }
 
         NBTUtil.write(new NamedTag("Package " + name, NBTSon.toNBT(meta.build())), new File(folder, name + ".dat"), true);
+        NBTUtil.write(new NamedTag("Package " + name, NBTSon.toNBT(meta.build())), new File(folder, name + "-uncompressed.dat"), false);
     }
 
     public PakWriter resource(PakKey key, PakResource resource) throws IOException {
